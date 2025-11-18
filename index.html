@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Зыбепремия 2025 — Балтийские Surf Awards</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-soft: rgba(7, 16, 32, 0.9);
+      --accent: #4adeff;
+      --accent-soft: rgba(74, 222, 255, 0.16);
+      --accent-2: #a855f7;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --card-bg: rgba(15, 23, 42, 0.9);
+      --border-subtle: rgba(148, 163, 184, 0.25);
+      --radius-xl: 20px;
+      --shadow-soft: 0 18px 40px rgba(0,0,0,0.55);
+      --shadow-card: 0 14px 30px rgba(15,23,42,0.9);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #0f172a 0, #020617 40%, #000 100%);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      min-height: 100vh;
+      color: var(--text-main);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(74, 222, 255, 0.16) 0, transparent 50%),
+        radial-gradient(circle at 90% 0%, rgba(168, 85, 247, 0.22) 0, transparent 55%),
+        radial-gradient(circle at 50% 120%, rgba(56, 189, 248, 0.28) 0, transparent 60%);
+    }
+
+    .noise {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.08;
+      mix-blend-mode: soft-light;
+      background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+      z-index: 0;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 24px 16px 64px;
+    }
+
+    /* HERO */
+
+    .hero {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      gap: 28px;
+      align-items: center;
+    }
+
+    @media (max-width: 880px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 13px 6px 6px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.32);
+      background: rgba(15,23,42,0.85);
+      box-shadow: 0 12px 30px rgba(15,23,42,0.85);
+      margin-bottom: 18px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0%, #4adeff, #0ea5e9 40%, #020617 100%);
+      box-shadow: 0 0 0 1px rgba(15,23,42,0.9), 0 10px 25px rgba(56,189,248,0.6);
+      font-size: 15px;
+    }
+
+    .badge span strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .hero-title {
+      font-size: clamp(34px, 5vw, 48px);
+      line-height: 1.02;
+      letter-spacing: 0.02em;
+      font-weight: 800;
+      margin: 0 0 16px;
+    }
+
+    .hero-title span.highlight {
+      background: linear-gradient(120deg, #4adeff, #22c55e, #a855f7);
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 30px rgba(56,189,248,0.35);
+    }
+
+    .hero-subtitle {
+      margin: 0 0 18px;
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 32rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      margin-bottom: 22px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.88);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+    }
+
+    .hero-meta span b {
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 20px;
+      border-radius: 999px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      background: linear-gradient(135deg, #22c55e, #4ade80);
+      color: #022c22;
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 16px 30px rgba(34,197,94,0.4);
+      text-decoration: none;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.03);
+      box-shadow: 0 18px 40px rgba(22,163,74,0.5);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      background: rgba(15,23,42,0.9);
+      color: var(--text-muted);
+      font-size: 13px;
+      gap: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.12s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(15,23,42,1);
+      border-color: rgba(148,163,184,0.9);
+      color: var(--text-main);
+      transform: translateY(-1px);
+    }
+
+    .hero-note {
+      width: 100%;
+      font-size: 12px;
+      color: var(--text-muted);
+      opacity: 0.9;
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: 26px;
+      padding: 18px 18px 18px;
+      background: radial-gradient(circle at 0 0, rgba(56,189,248,0.35) 0, transparent 60%),
+                  radial-gradient(circle at 100% 0, rgba(168,85,247,0.4) 0, transparent 60%),
+                  linear-gradient(145deg, rgba(15,23,42,0.95), rgba(15,23,42,0.98));
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148,163,184,0.35);
+      overflow: hidden;
+      min-height: 270px;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 50% 0, rgba(248,250,252,0.08), transparent 60%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .hero-card-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      height: 100%;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+    }
+
+    .pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: rgba(15,23,42,0.9);
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .stat-strip {
+      margin-top: 4px;
+      padding: 8px 10px;
+      border-radius: 14px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.4);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 11px;
+    }
+
+    .stat-block {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .stat-label {
+      color: var(--text-muted);
+    }
+
+    .stat-value {
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .wave-preview {
+      margin-top: 8px;
+      padding: 10px 10px 12px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(15,23,42,0.95), rgba(15,23,42,0.96));
+      border: 1px solid rgba(148,163,184,0.5);
+      box-shadow: var(--shadow-card);
+    }
+
+    .wave-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .wave-title {
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .wave-tag {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(34,197,94,0.16);
+      color: #bbf7d0;
+      border: 1px solid rgba(74,222,128,0.6);
+    }
+
+    .wave-bar {
+      position: relative;
+      height: 9px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(30,64,175,0.8);
+    }
+
+    .wave-bar-fill {
+      position: absolute;
+      inset: 0;
+      transform-origin: left center;
+      transform: scaleX(0.86);
+      background: linear-gradient(90deg, #22d3ee, #4ade80, #a855f7);
+      box-shadow: 0 0 16px rgba(56,189,248,0.7);
+    }
+
+    .wave-footer {
+      margin-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* SECTIONS */
+
+    .section {
+      margin-top: 40px;
+      padding: 22px 18px 20px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-subtle);
+      background: linear-gradient(145deg, rgba(15,23,42,0.96), rgba(15,23,42,0.96));
+      box-shadow: var(--shadow-card);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title span.icon {
+      font-size: 20px;
+    }
+
+    .section-kicker {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .section-body {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .section-body strong {
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    /* NOMINATIONS GRID */
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    @media (max-width: 960px) {
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .card {
+      border-radius: 18px;
+      padding: 14px 14px 13px;
+      background: radial-gradient(circle at 0 0, rgba(56,189,248,0.12) 0, transparent 55%),
+                  radial-gradient(circle at 100% 100%, rgba(168,85,247,0.18) 0, transparent 55%),
+                  rgba(15,23,42,0.98);
+      border: 1px solid rgba(148,163,184,0.3);
+      box-shadow: 0 12px 26px rgba(15,23,42,0.95);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      border-color: rgba(248,250,252,0.8);
+      transform: translateY(-2px);
+      transition: all 0.14s ease-out;
+      box-shadow: 0 16px 40px rgba(15,23,42,0.95);
+    }
+
+    .card-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: rgba(148,163,184,0.85);
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .card-title span.emoji {
+      font-size: 16px;
+    }
+
+    .card-text {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .card-tag {
+      margin-top: 4px;
+      font-size: 11px;
+      color: rgba(212, 252, 255, 0.9);
+      padding: 3px 8px;
+      border-radius: 999px;
+      align-self: flex-start;
+      border: 1px solid rgba(56,189,248,0.7);
+      background: rgba(8,47,73,0.7);
+    }
+
+    /* STEPS */
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 880px) {
+      .steps {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .step {
+      border-radius: 16px;
+      padding: 12px 14px 13px;
+      background: rgba(15,23,42,0.96);
+      border: 1px dashed rgba(148,163,184,0.6);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 13px;
+    }
+
+    .step-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    .step-num {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.7);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .step-body {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* FOOTER CTA */
+
+    .footer-cta {
+      margin-top: 28px;
+      padding: 18px 18px 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(148,163,184,0.8);
+      background: radial-gradient(circle at 0 0, rgba(34,197,94,0.3) 0, transparent 55%),
+                  radial-gradient(circle at 100% 100%, rgba(59,130,246,0.32) 0, transparent 55%),
+                  rgba(15,23,42,0.98);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px 16px;
+    }
+
+    .footer-cta-text {
+      font-size: 14px;
+      color: var(--text-main);
+    }
+
+    .footer-cta-text span {
+      color: #bbf7d0;
+      font-weight: 600;
+    }
+
+    .footer-cta-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    .footer-cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    @media (max-width: 640px) {
+      .footer-cta {
+        align-items: flex-start;
+      }
+    }
+
+  </style>
+</head>
+<body>
+<div class="page">
+  <div class="noise"></div>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <div class="badge">
+          <span class="badge-pill">🌊</span>
+          <span>Чат <strong>«Ветровая Зыбь»</strong> представляет</span>
+        </div>
+        <h1 class="hero-title">
+          Балтийские Surf Awards<br />
+          <span class="highlight">«Зыбепремия&nbsp;2025»</span>
+        </h1>
+        <p class="hero-subtitle">
+          Неформальная премия для своих. Лучшие проезды, самые жирные разъёбы и честный локальный стёб
+          по итогам <strong>всего 2025 года</strong> на Балтике.
+        </p>
+        <div class="hero-meta">
+          <span>📍 <b>Балтика</b> • Пионерский, Мотыль, всё, что кроет</span>
+          <span>🗓️ <b>Год 2025</b></span>
+          <span>💬 Чат: <b>«Ветровая Зыбь»</b></span>
+        </div>
+        <div class="hero-cta">
+          <a href="#participate" class="btn-primary">
+            Выдвинуть проезд
+            <span>➜</span>
+          </a>
+          <a href="#nominations" class="btn-secondary">
+            Посмотреть номинации
+          </a>
+          <div class="hero-note">
+            Любой участник чата может выдвинуть себя или друга. Главное — есть видео и немного самоиронии.
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Карточка примера номинации">
+        <div class="hero-card-inner">
+          <div class="pill-row">
+            <span class="pill">🏆 Номинация: Заезыбный проезд</span>
+            <span class="pill">🎥 Формат: видео 10–30 секунд</span>
+          </div>
+          <div class="stat-strip">
+            <div class="stat-block">
+              <span class="stat-label">Локация</span>
+              <span class="stat-value">Пионерский, Мотыль</span>
+            </div>
+            <div class="stat-block">
+              <span class="stat-label">Сет</span>
+              <span class="stat-value">Северо-запад, ровная зыбь</span>
+            </div>
+            <div class="stat-block">
+              <span class="stat-label">Шанс на награду</span>
+              <span class="stat-value">86%</span>
+            </div>
+          </div>
+          <div class="wave-preview">
+            <div class="wave-header">
+              <div>
+                <div class="wave-title">Кандидат: Петр Каптелов</div>
+                <div style="font-size:11px;color:var(--text-muted);">длинный ровный проезд по балтийской стеночке</div>
+              </div>
+              <span class="wave-tag">Wave of the Year?</span>
+            </div>
+            <div class="wave-bar">
+              <div class="wave-bar-fill"></div>
+            </div>
+            <div class="wave-footer">
+              <span>🤙 Стильный кросстеп, чистый выход</span>
+              <span>Голосуют только свои</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="section-header">
+        <div class="section-title">
+          <span class="icon">💡</span>
+          Что такое «Зыбепремия 2025»?
+        </div>
+        <div class="section-kicker">
+          Не фестиваль, не контест, а аккуратный разбор балтийских заездов.
+        </div>
+      </div>
+      <div class="section-body">
+        <p>
+          <strong>«Зыбепремия 2025»</strong> — это внутренняя премия чата <strong>«Ветровая Зыбь»</strong>: мы фиксируем всё лучшее (и худшее),
+          что случилось с нами на волнах за год.
+        </p>
+        <p>
+          В отличие от пафосных контестов, здесь нет судейских будок и протоколов. Есть
+          <strong>реальные проезды, честные вайпауты, балтийская зыбь</strong> и голосование тех, кто действительно
+          стоит рядом с тобой в лайнапе.
+        </p>
+        <p>
+          В конце года мы собираем все заявки, устраиваем голосование в чате и объявляем результаты.
+          Победителям — <strong>почёт, слава, мемы и вечная стигма в истории «Ветровой Зыби»</strong>.
+        </p>
+      </div>
+    </section>
+
+    <!-- NOMINATIONS -->
+    <section class="section" id="nominations">
+      <div class="section-header">
+        <div class="section-title">
+          <span class="icon">🏄‍♂️</span>
+          Номинации 2025
+        </div>
+        <div class="section-kicker">
+          Коротко и по делу — без лишней мишуры.
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="card-label">Главная номинация</div>
+          <div class="card-title">
+            <span class="emoji">🔥</span>
+            Заезыбный проезд года
+          </div>
+          <div class="card-text">
+            Самый сильный проезд сезона: длина, контроль, стиль. Тот самый момент, когда всё сошлось.
+          </div>
+          <div class="card-tag">Видео 10–40 секунд, без склеек</div>
+        </article>
+
+        <article class="card">
+          <div class="card-label">Размер имеет значение</div>
+          <div class="card-title">
+            <span class="emoji">🌊</span>
+            Зыбь-матерь
+          </div>
+          <div class="card-text">
+            Самая крупная и бодрая волна сезона. Можно даже без идеального проезда — главное, чтобы страшно.
+          </div>
+          <div class="card-tag">Крупный план, видно райдера и масштаб</div>
+        </article>
+
+        <article class="card">
+          <div class="card-label">Тёмная слава</div>
+          <div class="card-title">
+            <span class="emoji">💥</span>
+            Зыбепиздело года
+          </div>
+          <div class="card-text">
+            Самый сочный вайпаут: доска, пена, улёт в небытие. Тут чем позорнее, тем честнее награда.
+          </div>
+          <div class="card-tag">Разрешён смех в кадре</div>
+        </article>
+
+        <article class="card">
+          <div class="card-label">Футворк</div>
+          <div class="card-title">
+            <span class="emoji">🦶</span>
+            Кросстеп года
+          </div>
+          <div class="card-text">
+            Самый аккуратный и уверенный проход по доске. Даже если он был единственный за сезон — всё равно считается.
+          </div>
+          <div class="card-tag">Снимаем целиком доску и райдера</div>
+        </article>
+
+        <article class="card">
+          <div class="card-label">Картинка</div>
+          <div class="card-title">
+            <span class="emoji">📹</span>
+            Контент-зыбь
+          </div>
+          <div class="card-text">
+            Видео или фото, после которого хочется ехать на спот прямо сейчас. Свет, ракурс, атмосфера.
+          </div>
+          <div class="card-tag">Можно без идеального проезда</div>
+        </article>
+
+        <article class="card">
+          <div class="card-label">Эксперименты</div>
+          <div class="card-title">
+            <span class="emoji">🧪</span>
+            Инноватор зыби
+          </div>
+          <div class="card-text">
+            Прыжок с пирса, странный сетап, камера в зубах, костюм динозавра — всё, что выбивает из рутины.
+          </div>
+          <div class="card-tag">Главное — чтобы было снято</div>
+        </article>
+
+        <article class="card">
+          <div class="card-label">Трудоголизм</div>
+          <div class="card-title">
+            <span class="emoji">🐗</span>
+            Кабан зыби
+          </div>
+          <div class="card-text">
+            Тот, кто был в воде, когда всем остальным «лень/работа/ветер не тот».
+          </div>
+          <div class="card-tag">Статус по итогу всего года</div>
+        </article>
+
+        <article class="card">
+          <div class="card-label">Исчезновение</div>
+          <div class="card-title">
+            <span class="emoji">👻</span>
+            Призрак лайнапа
+          </div>
+          <div class="card-text">
+            В чате «еду», «буду», «залетаю», а по факту — вечный оффлайн. Награда за стабильность пропаж.
+          </div>
+          <div class="card-tag">Голосует весь чат</div>
+        </article>
+
+        <article class="card">
+          <div class="card-label">Опционально</div>
+          <div class="card-title">
+            <span class="emoji">🎧</span>
+            Саундтрек сезона
+          </div>
+          <div class="card-text">
+            Трек, под который чаще всего ехали на спот или монтировали ролики. Чтобы остался саунд Балтики 2025.
+          </div>
+          <div class="card-tag">Плейлист собирается отдельно</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- HOW TO PARTICIPATE -->
+    <section class="section" id="participate">
+      <div class="section-header">
+        <div class="section-title">
+          <span class="icon">✅</span>
+          Как выдвинуться
+        </div>
+        <div class="section-kicker">
+          Никакой бюрократии, только ссылка на видос и немного контекста.
+        </div>
+      </div>
+
+      <div class="section-body">
+        <p><strong>Чтобы попасть в «Зыбепремию 2025»:</strong></p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-head">
+            <span class="step-num">1</span>
+            Найди свой момент или момент проезда друга, подруги
+          </div>
+          <div class="step-body">
+            Подними архив за год: лучший проезд, жестчайший вайпаут, странный эксперимент или просто красивый кадр.
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-head">
+            <span class="step-num">2</span>
+            Кинь в тред номинаций
+          </div>
+          <div class="step-body">
+            В чате <strong>«Ветровая Зыбь»</strong> будет отдельный тред/закреп
+            под «Зыбепремию 2025». Туда кидаешь:
+            <br>— ссылку на видео / фото<br>— название номинации<br>— кто в кадре<br>— локацию и примерную дату
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-head">
+            <span class="step-num">3</span>
+            Жди голосование
+          </div>
+          <div class="step-body">
+            В конце года запускаем голосование по каждой номинации. Голосуют только участники чата. 
+            Дальше — публичный разбор полётов и раздача условных «оскаров» по-балтийски.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER CTA -->
+    <section class="footer-cta">
+      <div>
+        <div class="footer-cta-text">
+          Любая ровная стеночка, любой мерзкий вайпаут, любой странный эксперимент — всё может стать частью <span>«Зыбепремии&nbsp;2025»</span>.
+        </div>
+        <div class="footer-cta-sub">
+          Фиксируй, снимай, скидывай в тред — остальное за чатом.
+        </div>
+      </div>
+      <div class="footer-cta-actions">
+        <a href="#participate" class="btn-primary">Выдвинуть момент</a>
+        <a href="#about" class="btn-secondary">Показать друзьям</a>
+      </div>
+    </section>
+
+  </main>
+</div>
+</body>
+</html>
