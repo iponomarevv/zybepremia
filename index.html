@@ -371,6 +371,30 @@
     @media (max-width: 640px) {
       .footer-cta { align-items: flex-start; }
     }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-logo-card {
+      border-radius: 24px;
+      padding: 14px 16px;
+      background: radial-gradient(circle at 0 0, rgba(56,189,248,0.12) 0, transparent 55%),
+                  radial-gradient(circle at 100% 100%, rgba(168,85,247,0.16) 0, transparent 55%),
+                  rgba(15,23,42,0.98);
+      border: 1px solid rgba(148,163,184,0.5);
+      box-shadow: 0 16px 40px rgba(15,23,42,0.95);
+      max-width: 260px;
+      width: 100%;
+    }
+    .hero-logo-img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 18px;
+    }
+
   </style>
 </head>
 <body>
@@ -388,16 +412,10 @@
           <span class="highlight">Заезыбь&nbsp;2025</span>
         </h1>
         <p class="hero-subtitle">
-          Неформальная премия для своих. Лучшие проезды, самые жирные разъёбы и честный локальный стёб
+          Неформальная премия для своих. Лучшие проезды, самые жирные волны и честный локальный стёб
           по итогам <strong>всего 2025 года</strong> на Балтике.
         </p>
-        <div class="hero-meta">
-          <span>📍 <b>Балтика</b> • Пионерский, Мотыль и всё, что кроет</span>
-          <span>🗓️ <b>Год 2025</b></span>
-          <a href="https://t.me/zbIBb_baltic" target="_blank" rel="noopener noreferrer">
-            💬 Чат: <b>«Ветровая Зыбь»</b>
-          </a>
-        </div>
+        
         <div class="hero-cta">
           <a href="#participate" class="btn-primary">
             Как выдвинуть проезд
@@ -409,6 +427,11 @@
           <div class="hero-note">
             Любой участник чата может выдвинуть себя или друга. Главное — есть видео и немного самоиронии.
           </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-logo-card">
+          <img src="logo.png" alt="Логотип Зыбепремии 2025" class="hero-logo-img">
         </div>
       </div>
     </section>
