@@ -54,10 +54,13 @@
       margin: 0 auto;
       padding: 24px 16px 64px;
     }
+
+    /* hero */
+
     .hero {
       margin-top: 24px;
       display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      grid-template-columns: minmax(0, 1fr);
       gap: 28px;
       align-items: center;
     }
@@ -198,6 +201,9 @@
       color: var(--text-muted);
       opacity: 0.9;
     }
+
+    /* sections */
+
     .section {
       margin-top: 40px;
       padding: 22px 18px 20px;
@@ -372,6 +378,8 @@
       .footer-cta { align-items: flex-start; }
     }
 
+    /* старые стили логотипа в hero сейчас не используются, но можно оставить */
+
     .hero-visual {
       display: flex;
       justify-content: center;
@@ -395,12 +403,31 @@
       border-radius: 18px;
     }
 
+    /* новый маленький логотип в правом верхнем углу */
+
+    .top-logo {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 110px;
+      z-index: 10;
+    }
+    .top-logo-img {
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(15,23,42,0.9);
+    }
   </style>
 </head>
 <body>
 <div class="page">
   <div class="noise"></div>
   <main>
+    <div class="top-logo">
+      <img src="logo.png" alt="Логотип Зыбепремии 2025" class="top-logo-img">
+    </div>
+
     <section class="hero">
       <div>
         <div class="badge">
@@ -415,23 +442,18 @@
           Неформальная премия для своих. Лучшие проезды, самые жирные волны и честный локальный стёб
           по итогам <strong>всего 2025 года</strong> на Балтике.
         </p>
-        
+
         <div class="hero-cta">
           <a href="#participate" class="btn-primary">
             Как выдвинуть проезд
             <span>➜</span>
           </a>
-          <a href="https://t.me/zbIBb_baltic" class="btn-secondary" target="_blank" rel="noopener noreferrer">
-            Перейти в чат
+          <a href="#nominations" class="btn-secondary">
+            Посмотреть номинации
           </a>
           <div class="hero-note">
             Любой участник чата может выдвинуть себя или друга. Главное — есть видео и немного самоиронии.
           </div>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="hero-logo-card">
-          <img src="logo.png" alt="Логотип Зыбепремии 2025" class="hero-logo-img">
         </div>
       </div>
     </section>
