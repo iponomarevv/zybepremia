@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Заезыбь 2025 — Зыбепремия</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              'baltic-dark': '#020617',
+              'baltic-blue': '#0f172a',
+              'neon-cyan': '#4adeff',
+              'neon-purple': '#a855f7',
+              'neon-green': '#22c55e',
+            },
+            backgroundImage: {
+              'noise': "url('https://grainy-gradients.vercel.app/noise.svg')",
+            },
+            animation: {
+              'text': 'text 5s ease infinite',
+              'wave-slow': 'wave 25s linear infinite',
+              'wave-medium': 'wave 15s linear infinite',
+              'wave-fast': 'wave 10s linear infinite',
+              'swell-slow': 'swell 7s ease-in-out infinite',
+              'swell-medium': 'swell 5s ease-in-out infinite',
+              'swell-fast': 'swell 3.5s ease-in-out infinite',
+              'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
+            },
+            keyframes: {
+              text: {
+                '0%, 100%': {
+                  'background-size': '200% 200%',
+                  'background-position': 'left center',
+                },
+                '50%': {
+                  'background-size': '200% 200%',
+                  'background-position': 'right center',
+                },
+              },
+              wave: {
+                '0%': { transform: 'translateX(0)' },
+                '100%': { transform: 'translateX(-50%)' },
+              },
+              swell: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-15px)' },
+              },
+              'fade-in-up': {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            },
+          }
+        }
+      }
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body::-webkit-scrollbar {
+        width: 8px;
+      }
+      body::-webkit-scrollbar-track {
+        background: #020617;
+      }
+      body::-webkit-scrollbar-thumb {
+        background-color: #1e293b;
+        border-radius: 20px;
+      }
+    </style>
+
+<link rel="stylesheet" href="/index.css">
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/assets/index-uC34B--t.js"></script>
+</head>
+  <body class="bg-baltic-dark text-slate-100 antialiased selection:bg-neon-cyan/30 selection:text-neon-cyan">
+    <div id="root"></div>
+</body>
+</html>
