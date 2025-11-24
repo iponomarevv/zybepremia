@@ -1,15 +1,20 @@
-# Зыбепремия 2025 — Балтийские Surf Awards
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+</div>
 
-Простой статический лендинг для GitHub Pages.
+# Run and deploy your AI Studio app
 
-## Как задеплоить
+This contains everything you need to run your app locally.
 
-1. Создай новый репозиторий на GitHub, например `zybepremiya2025`.
-2. Залей в корень файлы `index.html`, `README.md` и `.nojekyll`.
-3. В настройках репозитория зайди в **Settings → Pages**.
-4. В Source выбери **Deploy from a branch**, затем `main` / `/root`.
-5. Сохрани — через короткое время лендинг будет доступен по адресу вида:
+View your app in AI Studio: https://ai.studio/apps/drive/1fuMKF2FgLrSFYl6E1JtCRs8mj6B9MOnJ
 
-`https://твое_имя.github.io/zybepremiya2025/`
+## Run Locally
 
-Если нужен свой домен — в GitHub Pages укажи кастомный домен и настрой DNS у регистратора.
+**Prerequisites:**  Node.js
+
+
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`
